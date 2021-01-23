@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['submit'])){
-        $name = $_POST['name'];
+        $name = mysqli_real_escape_string($_POST['name']);
         $is_completed = $_POST['is_completed'];
         echo $is_completed;
         require_once('dbconnection.php');

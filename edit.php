@@ -31,7 +31,7 @@
             </form>
             <?php
             if (isset($_POST['submit'])) {
-                $name = $_POST['name'];
+                $name = mysqli_real_escape_string($_POST['name']);
                 $is_completed = $_POST['is_completed'];
                 $query = "UPDATE todo  SET name='$name', is_completed='$is_completed' WHERE id=".$_GET['id'];
                 $result = mysqli_query($db, $query);
